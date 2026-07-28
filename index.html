@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTech 2035 | Technology for a Greener Tomorrow</title>
+    <!-- Using Google Fonts for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           CSS Variables & Resets
+           ========================================= */
+        :root {
+            --color-green: #22C55E;
+            --color-green-dark: #16a34a;
+            --color-dark-blue: #0F172A;
+            --color-white: #FFFFFF;
+            --color-light-gray: #F8FAFC;
+            --color-text: #334155;
+            
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           Typography & Utilities
+           ========================================= */
+        h1, h2, h3 {
+            color: var(--color-dark-blue);
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bg-light {
+            background-color: var(--color-light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        /* =========================================
+           Buttons
+           ========================================= */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--color-green);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--color-white);
+            color: var(--color-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-white);
+            color: var(--color-green);
+        }
+
+        /* =========================================
+           Navigation
+           ========================================= */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-dark-blue);
+        }
+
+        .logo span {
+            color: var(--color-green);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-green);
+        }
+
+        /* =========================================
+           Hero Section
+           ========================================= */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            /* Subtle nature-inspired gradient */
+            background: linear-gradient(135deg, var(--color-dark-blue) 0%, #1e293b 60%, var(--color-green) 100%);
+            color: var(--color-white);
+            text-align: center;
+            padding-top: 80px; /* Offset for navbar */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: var(--color-white);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .highlight {
+            color: var(--color-green);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* =========================================
+           Features (Innovations) Section
+           ========================================= */
+        .features {
+            padding: 6rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--color-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           About Section
+           ========================================= */
+        .about {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about p {
+            font-size: 1.15rem;
+        }
+
+        /* =========================================
+           Call to Action Section
+           ========================================= */
+        .cta {
+            background-color: var(--color-green);
+            color: var(--color-white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--color-white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .cta .btn-primary {
+            background-color: var(--color-dark-blue);
+        }
+
+        .cta .btn-primary:hover {
+            background-color: #1e293b;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+        }
+
+        /* =========================================
+           Footer
+           ========================================= */
+        .footer {
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--color-light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--color-green);
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           Responsive Design
+           ========================================= */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Mobile menu placeholder */
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">EcoTech<span>2035</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#innovations">Innovations</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Technology for a <span class="highlight">Greener Tomorrow</span></h1>
+            <p>Discover innovative solutions designed to protect our planet and build a sustainable future for generations to come.</p>
+            <a href="#innovations" class="btn btn-primary">Join the Movement</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="innovations" class="features bg-light">
+        <div class="container">
+            <h2 class="section-title">Sustainable Innovations</h2>
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="icon">☀️</div>
+                    <h3>Solar Energy</h3>
+                    <p>Harnessing the power of the sun with next-generation photovoltaic cells to power cities cleanly and efficiently.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="icon">♻️</div>
+                    <h3>Smart Recycling</h3>
+                    <p>AI-driven sorting facilities that maximize material recovery and push us closer to a true zero-waste economy.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="icon">🚲</div>
+                    <h3>Green Transportation</h3>
+                    <p>Zero-emission transit networks and EV infrastructure that keep our world moving without leaving a footprint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-content">
+            <h2 class="section-title">About EcoTech 2035</h2>
+            <p>EcoTech 2035 is a global initiative dedicated to accelerating the transition to a sustainable economy. By bridging the gap between cutting-edge technology and environmental stewardship, we empower communities, businesses, and individuals to implement solutions that restore our ecosystems and protect our climate.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="contact" class="cta">
+        <div class="container cta-content">
+            <h2>Ready to make an impact?</h2>
+            <p>Join thousands of volunteers and innovators working together to heal the planet.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary btn-outline">Volunteer Now</a>
+                <a href="#" class="btn btn-primary">Subscribe for Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+            <p>&copy; 2026 EcoTech 2035. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
