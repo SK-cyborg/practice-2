@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | EcoTech 2035</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-green: #22C55E;
+            --color-green-dark: #16a34a;
+            --color-dark-blue: #0F172A;
+            --color-white: #FFFFFF;
+            --color-light-gray: #F8FAFC;
+            --color-text: #334155;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--color-text); background-color: var(--color-white); line-height: 1.6; }
+        h1, h2, h3 { color: var(--color-dark-blue); line-height: 1.2; }
+        
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .bg-light { background-color: var(--color-light-gray); }
+
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--color-dark-blue); }
+        .logo span { color: var(--color-green); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--color-text); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+        .nav-links a:hover { color: var(--color-green); }
+
+        /* Inner Page Header */
+        .page-header { padding: 120px 0 60px; text-align: center; background-color: var(--color-light-gray); }
+        .page-header h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .page-header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+
+        /* Features/Projects Grid */
+        .features { padding: 6rem 0; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card {
+            background-color: var(--color-white); padding: 3rem 2rem; border-radius: 12px;
+            text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: var(--transition); border: 1px solid rgba(0,0,0,0.03);
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .card .icon { font-size: 3rem; margin-bottom: 1.5rem; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .card p { font-size: 0.95rem; }
+
+        /* Footer */
+        .footer { background-color: var(--color-dark-blue); color: var(--color-white); padding: 3rem 0; text-align: center; }
+        .footer p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">EcoTech<span>2035</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Active Projects</h1>
+            <p>See how we are putting our innovations to work around the globe.</p>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="card">
+                    <div class="icon">🌊</div>
+                    <h3>Ocean Cleanup Array</h3>
+                    <p>Deploying autonomous drones to collect microplastics from the Pacific garbage patch.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🌳</div>
+                    <h3>Drone Reforestation</h3>
+                    <p>Planting 1 million trees a day using precision agriculture drones in deforested regions.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🏙️</div>
+                    <h3>Vertical Farming</h3>
+                    <p>Transforming abandoned warehouses into high-yield, low-water urban farms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 EcoTech 2035. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
